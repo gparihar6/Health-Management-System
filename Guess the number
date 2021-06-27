@@ -1,0 +1,18 @@
+n=18
+print('Welcome to a game called guess the number!')
+print('You get only 9 guesses to guess the correct number.')
+guesses=1
+while guesses<=9:
+    num_guessed=int(input('Make a guess : '))
+    if num_guessed<18:
+        print('Guess a higher number.')
+    elif num_guessed>18:
+        print('Guess a lower number.')
+    else:
+        print('Congratulations, You have won the game!')
+        print('You took ',guesses,' to finish this game.')
+        break
+    print(9-guesses,' guesses left.')
+    guesses=guesses+1
+if guesses>9:
+    print('Game over.')
