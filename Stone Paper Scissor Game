@@ -1,0 +1,53 @@
+import random
+print("Welcome to the Stone Paper Scissor Game!!")
+lst = ['Stone', 'Paper', 'Scissor']
+chance = 10
+computer_point = 0
+human_point = 0
+
+while chance!=0:
+    a = input("Stone/Paper/Scissor : ")
+    _input = a.capitalize()
+    _random = random.choice(lst)
+
+    if _input == _random:
+        print("Tie 0 point given to both", '\n')
+
+    elif _input == "Stone" and _random == "Paper":
+        computer_point = computer_point+1
+        print(f"Your choice is {_input} and computer's choice is {_random} \n")
+        print("Computer wins this round!")
+        print(f"Computer's points are {computer_point} and your points are {human_point} \n")
+
+    elif _input == "Stone" and _random == "Scissor":
+        human_point = human_point+1
+        print(f"Your choice is {_input} and computer's choice is {_random} \n")
+        print("You win this round!")
+        print(f"Computer's points are {computer_point} and your points are {human_point} \n")
+
+    elif _input == "Paper" and _random == "Scissor":
+        computer_point = computer_point + 1
+        print(f"Your choice is {_input} and computer's choice is {_random} \n")
+        print("Computer wins this round!")
+        print(f"Computer's points are {computer_point} and your points are {human_point} \n")
+
+    elif _input == "Paper" and _random == "Stone":
+        human_point = human_point+1
+        print(f"Your choice is {_input} and computer's choice is {_random} \n")
+        print("You win this round!")
+        print(f"Computer's points are {computer_point} and your points are {human_point} \n")
+
+    elif _input == "Scissor" and _random == "Stone":
+        computer_point = computer_point + 1
+        print(f"Your choice is {_input} and computer's choice is {_random} \n")
+        print("Computer wins this round!")
+        print(f"Computer's points are {computer_point} and your points are {human_point} \n")
+
+    elif _input == "Scissor" and _random == "Paper":
+        human_point = human_point+1
+        print(f"Your choice is {_input} and computer's choice is {_random} \n")
+        print("You win this round!")
+        print(f"Computer's points are {computer_point} and your points are {human_point} \n")
+    chance = chance - 1
+
+print("You have won this game!!") if human_point>computer_point else print("You have lost this game!")
