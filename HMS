@@ -1,0 +1,45 @@
+client_dict = {1: "Gaurav", 2: "Laksh", 3: "Keshav"}
+log_dict = {1: "Exercise", 2: "Diet"}
+
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+
+
+try:
+    print("Select client name:")
+    for key, value in client_dict.items():
+        print("Press", key, "for", value, "\n", end="")
+    client_name = int(input())
+
+    print("Selected client : ", client_dict[client_name], "\n", end="")
+
+    print("Press 1 to log or 2 to retrieve")
+    op = int(input())
+
+    if op==1:
+        for key, value in log_dict.items():
+            print("Press", key, "to log", value, "\n", end="")
+        log_name = int(input())
+        print("Enter your : ", log_dict[log_name])
+        f = open(client_list[client_name] + "_" + log_dict[log_name] + ".txt", "a")
+        k = 'Y'
+        while (k!="N"):
+            print("Enter", log_dict[log_name], "\n", end="")
+            mytext = input()
+            f.write("[ " + str(getdate()) + " ] : " + mytext + "\n")
+            k = input("Want to add more? Y/N :")
+            continue
+    elif op==2:
+        for key, value in log_dict.items():
+            print("Press", key, "to retrieve", value, "\n", end="")
+        log_name = int(input())
+        print(client_dict[client_name], "-", log_dict[lock_name], "Report :", "\n", end="")
+        f = open(client_dict[client_name] + "_" + log.dict[lock_name] + ".txt", "rt")
+        contents = f.readlines()
+        for line in contents:
+            print(line, end="")
+    else:
+        print("Invalid Input !!!")
+except Exception as e:
+    print("Wrong Input !!!")
